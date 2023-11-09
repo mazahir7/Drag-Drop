@@ -15,6 +15,17 @@ for (const empty of empties) {
   empty.addEventListener("drop", dragDrop);
 }
 
+fill.addEventListener("touchstart", dragStart);
+fill.addEventListener("touchend", dragEnd);
+
+for (const empty of empties) {
+  empty.addEventListener("touchmove", dragOver);
+  empty.addEventListener("touchstart", dragEnter);
+  empty.addEventListener("touchend", dragLeave);
+  empty.addEventListener("touchend", dragDrop);
+}
+
+
 
 function dragStart() {
   this.className += " hold";
